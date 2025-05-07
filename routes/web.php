@@ -7,14 +7,13 @@ Route::get('/', function () {
     return Inertia::render('welcome');
 })->name('home');
 
-Route::get('admin', function () {
-    return 'Hi admin!';
-})->middleware('role:admin');
+// Route::get('admin', function () {
+//     return 'Hi admin!';
+// })->middleware('role:admin');
 
-Route::get('user', function () {
-    return 'Hi user!';
-})->middleware('role:user');
-
+// Route::get('user', function () {
+//     return 'Hi user!';
+// })->middleware('role:user');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {
